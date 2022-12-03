@@ -22,11 +22,16 @@
           packageFun = import ./Cargo.nix;
         };
 
+        samply = (rustPkgs.workspace.samply {}).bin;
+
       in rec {
         packages = {
           # replace hello-world with your package name
-          samply = (rustPkgs.workspace.samply {}).bin;
-          default = packages.samply;
+          inherit samply;
+          default = samply;
+        };
+        overlays= final: prev: {
+          inherit samply;
         };
       }
     );
