@@ -16,3 +16,4 @@ fxhash = "0.2.1"
 
 [dev-dependencies]
 assert-json-diff = "2.0.1"
+

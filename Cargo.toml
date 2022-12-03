@@ -1,0 +1,14 @@
+[workspace]
+members = [
+    "fxprof-processed-profile",
+    "gecko_profile",
+    "perfrecord-mach-ipc-rendezvous",
+    "samply-api",
+    "samply-mac-preload",
+    "samply-server",
+    "samply-symbols",
+    "samply",
+    "tools/benchmarks",
+    "tools/dump_table",
+    "tools/query_api"
+]
