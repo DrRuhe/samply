@@ -1,8 +1,12 @@
 {
   inputs = {
-    cargo2nix.url = "github:cargo2nix/cargo2nix/release-0.11.0";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    cargo2nix = {
+      url = "github:cargo2nix/cargo2nix/release-0.11.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.follows = "cargo2nix/flake-utils";
-    nixpkgs.follows = "cargo2nix/nixpkgs";
+
   };
 
   outputs = inputs: with inputs;
@@ -14,15 +18,15 @@
         };
 
         rustPkgs = pkgs.rustBuilder.makePackageSet {
-          rustVersion = "1.65.0";
+          rustVersion = "1.61.0";
           packageFun = import ./Cargo.nix;
         };
 
       in rec {
         packages = {
           # replace hello-world with your package name
-          hello-world = (rustPkgs.workspace.hello-world {}).bin;
-          default = packages.hello-world;
+          samply = (rustPkgs.workspace.samply {}).bin;
+          default = packages.samply;
         };
       }
     );
