@@ -5,7 +5,6 @@ members = [
     "perfrecord-mach-ipc-rendezvous",
     "samply-api",
     "samply-mac-preload",
-    "samply-server",
     "samply-symbols",
     "samply",
     "tools/benchmarks",
