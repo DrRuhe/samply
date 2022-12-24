@@ -2,6 +2,7 @@ target
 profile.json
 .DS_Store
 Cargo.lock
+.direnv
 
 result-bin
 
